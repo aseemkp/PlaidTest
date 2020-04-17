@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Plaid Appian</title>
+    <title>DLH Plaid Appian POC</title>
     <link rel="stylesheet" href="https://threads.plaid.com/threads.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,10 +13,51 @@
     <main class="main">
         <div class="grid">
             <div class="grid__column grid__column--is-twelve-columns">
+
+                <div id="banner" class="everpresent-content">
+                    <h1 class="everpresent-content__heading">DLH Plaid Appian POC</h1>
+                    
+                    <div>
+                        See source code here:
+                        <a target="_blank" href="https://github.com/dlhpp/plaidappianpoc">https://github.com/dlhpp/plaidappianpoc</a>
+                        <br>&nbsp;<br>
+                    </div>
+
+                    <p id="intro" class="everpresent-content__subheading">
+                        An example that shows we can integrate Plaid into Appian.
+                        <br>&nbsp;<br>
+                        We need to create some web services that are reachable from Appian in order to swap public_token for access_token
+                        and begin retrieving bank data.
+                    </p>
+                    <p id="steps" class="everpresent-content__subheading">
+                        <br>&nbsp;<br>
+                        <span style="font-weight: bold; color: deeppink;">
+                            Congratulations! You just created an Item by linking your account!
+                        </span>
+                    </p>
+                </div>
+
+                <div id="container" class="initial-view">
+                    <p class="initial-view__description">
+                        Click the button below to open a list of Institutions.
+                        After you select one, you’ll be guided through an authentication process.
+                        Upon completion, a public_token will be passed back to the server and exchanged for
+                        access_token.
+                    </p>
+
                     <button id="link-btn" class="button button--is-primary" disabled>Connect with Plaid</button>
                     <div class="loading-indicator"></div>
-             </div>
-             
+                </div>
+
+                <div id="app" class="connected-view">
+                    <div class="item-overview">
+                        <div style="clear: both"></div>
+                        <h3 class="item-overview__heading">public_token</h3>
+                        <p class="item-overview__id" id="public_token"  style="font-weight: bold; color: deeppink;">••••••••hsakjsl</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </main>
 
@@ -32,7 +73,7 @@
                 clientName: 'Plaid Quickstart',
                 env: 'sandbox',
                 product: products,
-                key: 'b6bb629e9f4770e0bf1705387bfc67',
+                key: '42d86233c7d8205a5458c345de12fe',
                 countryCodes: 'US'.split(','),
             };
 
